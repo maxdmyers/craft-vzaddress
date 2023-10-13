@@ -1,4 +1,4 @@
-# VZ Address plugin for Craft CMS 3.x
+# VZ Address plugin for Craft CMS 4.x
 
 A simple address field for Craft.
 
@@ -6,7 +6,7 @@ A simple address field for Craft.
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.23 or later.
+This plugin requires Craft CMS 4.0.0 or later.
 
 ## Installation
 
@@ -24,7 +24,7 @@ To install the plugin, follow these instructions.
 
 ## VZ Address Overview
 
-This is a Craft 3 port of [VZ Address](https://github.com/elivz/VzAddress-Craft) by Eli Van Zoeren.
+This is a Craft 4 port of [VZ Address](https://github.com/elivz/VzAddress-Craft) by Eli Van Zoeren.
 
 ## Using VZ Address
 
