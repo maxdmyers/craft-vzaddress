@@ -10,6 +10,7 @@
 
 namespace superbig\vzaddress;
 
+use craft\base\Model;
 use superbig\vzaddress\services\VzAddressService as VzAddressServiceService;
 use superbig\vzaddress\variables\VzAddressVariable;
 use superbig\vzaddress\models\Settings;
@@ -51,7 +52,7 @@ class VzAddress extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '2.0.1';
+    public string $schemaVersion = "2.0.1";
 
     // Public Methods
     // =========================================================================
@@ -59,7 +60,7 @@ class VzAddress extends Plugin
     /**
      * @inheritdoc
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;
@@ -107,7 +108,7 @@ class VzAddress extends Plugin
     /**
      * @inheritdoc
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?Model
     {
         return new Settings();
     }

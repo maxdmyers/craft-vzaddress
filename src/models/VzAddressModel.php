@@ -267,7 +267,7 @@ class VzAddressModel extends Model
             Craft::warning("No Google API Key Found");
             return;
         }
-        
+
         $key = $settings->googleApiKey;
 
         // geocode our address into coordinates
@@ -282,9 +282,9 @@ class VzAddressModel extends Model
 
         // remove the name from the address as it throws the geocoder off
         unset($address['name']);
-        
+
         $searchAddress = implode(' ', $address);
-        
+
         $addrHash = hash('ripemd160', $searchAddress);
 
         if($this->hash === $addrHash){
@@ -426,7 +426,7 @@ class VzAddressModel extends Model
     /**
      * @inheritdoc
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             [
