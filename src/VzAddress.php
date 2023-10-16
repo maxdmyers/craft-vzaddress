@@ -52,7 +52,7 @@ class VzAddress extends Plugin
     /**
      * @var string
      */
-    public string $schemaVersion = "2.0.1";
+    public string $schemaVersion = "2.0.2";
 
     // Public Methods
     // =========================================================================
