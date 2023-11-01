@@ -26,37 +26,24 @@ class VzAddressModel extends Model
 {
     // Public Properties
     // =========================================================================
-
-    /**
-     * @var string
-     */
-    public $name;
-    public $street;
-    public $street2;
-    public $city;
-    public $region;
-    public $postalCode;
-    public $country;
-    public $countryName;
-    public $latitude;
-    public $longitude;
-    public $hash;
+    public string $name = '';
+    public string $street = '';
+    public string $street2 = '';
+    public string $city = '';
+    public string $region = '';
+    public string $postalCode = '';
+    public string $country = '';
+    public ?string $countryName = '';
+    public ?string $latitude = '';
+    public ?string $longitude = '';
+    public ?string $hash = '';
 
     // Public Methods
     // =========================================================================
-
     public function __toString()
     {
         return $this->text(true);
     }
-
-    /*public function toArray()
-    {
-        $address            = array_filter($this->getAttributes());
-        $address['country'] = $this->countryName;
-
-        return $address;
-    }*/
 
     public function text($formatted = false)
     {
@@ -186,7 +173,7 @@ class VzAddressModel extends Model
      *
      * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#MapOptions
      *
-     * @return \Twig_Markup The markup string wrapped in a Twig_Markup object
+     * @return \Twig\Markup The markup string wrapped in a Twig_Markup object
      */
     public function dynamicMap($params = [], $icon = [])
     {
@@ -406,7 +393,7 @@ class VzAddressModel extends Model
      * @param array $data
      *
      * @return string
-     * @throws \Twig_Error_Loader
+     * @throws \Twig\Error\LoaderError
      * @throws \yii\base\Exception
      */
     public function renderTemplate($template, $data = []): string

@@ -81,7 +81,7 @@ class VzAddressField extends Field
     /**
      * @inheritdoc
      */
-    public function normalizeValue(mixed $value, ElementInterface $element = null): mixed
+    public function normalizeValue(mixed $value, ?\craft\base\ElementInterface $element = null): mixed
     {
         if (is_string($value)) {
             $value = Json::decodeIfJson($value);
@@ -95,6 +95,10 @@ class VzAddressField extends Field
             return new VzAddressModel();
         }
 
+        if ($value instanceof VzAddressModel) {
+            return $value;
+        }
+
         $model = new VzAddressModel($value);
 
         $model->updateCoordinates();
@@ -105,7 +109,7 @@ class VzAddressField extends Field
     /**
      * @inheritdoc
      */
-    public function serializeValue(mixed $value, ElementInterface $element = null): mixed
+    public function serializeValue(mixed $value, ?\craft\base\ElementInterface $element = null): mixed
     {
         return parent::serializeValue($value, $element);
     }
@@ -128,7 +132,7 @@ class VzAddressField extends Field
     /**
      * @inheritdoc
      */
-    public function getInputHtml($value, ElementInterface $element = null): string
+    public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
         $view = Craft::$app->getView();
 
@@ -172,7 +176,7 @@ class VzAddressField extends Field
         );
     }
 
-    public function getTableAttributeHtml($value, ElementInterface $element): string
+    public function getTableAttributeHtml(mixed $value, ElementInterface $element): string
     {
         if ($value) {
             return $value->html();
